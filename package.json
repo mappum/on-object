@@ -1,0 +1,13 @@
+{
+  "name": "on-object",
+  "version": "0.0.0",
+  "description": "Register many EventEmitter listeners at once using objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Bell <mappum@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
