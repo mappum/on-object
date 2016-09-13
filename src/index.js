@@ -1,6 +1,7 @@
 'use strict'
 
 const EventEmitter = require('events')
+const wrap = require('event-cleanup')
 
 function objectCall (method, ...args) {
   if (typeof args[0] !== 'object') return method(...args)
@@ -20,6 +21,7 @@ function objectMethod (emitter, methodName) {
 
 module.exports = function (emitter) {
   if (!emitter) emitter = new EventEmitter()
+  else emitter = wrap(emitter)
   emitter.on = objectMethod(emitter, 'on')
   emitter.once = objectMethod(emitter, 'once')
   emitter.removeListener = objectMethod(emitter, 'removeListener')
