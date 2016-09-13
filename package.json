@@ -4,7 +4,8 @@
   "description": "Register many EventEmitter listeners at once using objects",
   "main": "index.js",
   "scripts": {
-    "test": "standard index.js src/index.js test.js && nyc tape test.js | faucet && nyc report",
+    "test": "standard index.js src/*.js test/*.js && nyc tape test/*.js | faucet && nyc report",
+    "test-browser": "npm run build && ./test/browser.sh && npm run source",
     "build": "rm -rf lib && babel --presets es2015 src -d lib",
     "source": "rm -rf lib && ln -s src lib",
     "prepublish": "npm run build",
@@ -19,6 +20,8 @@
     "faucet": "0.0.1",
     "nyc": "^8.1.0",
     "standard": "^8.0.0",
-    "tape": "^4.6.0"
+    "tape": "^4.6.0",
+    "zuul": "^3.11.0",
+    "zuul-ngrok": "^4.0.0"
   }
 }

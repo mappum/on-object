@@ -1,6 +1,6 @@
 var test = require('tape')
 var EventEmitter = require('events')
-var OnObject = require('./')
+var OnObject = require('../')
 
 test('use as EventEmitter replacement', function (t) {
   t.plan(5)
